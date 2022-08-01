@@ -14,9 +14,7 @@ class SierraClient:
     def _refresh_auth_token(self):
         # Get an access token
         # https://sandbox.iii.com/docs/Content/zReference/authClient.htm
-        resp = self.sess.post(
-            f"{self.api_url}/token", auth=(self.oauth_key, self.oauth_secret)
-        )
+        resp = self.client.post("/token", auth=(self.oauth_key, self.oauth_secret))
 
         try:
             access_token = resp.json()["access_token"]
@@ -25,7 +23,7 @@ class SierraClient:
             print(resp.json())
             raise
 
-        self.headers = {
+        self.client.headers = {
             "Authorization": f"Bearer {access_token}",
             "Accept": "application/json",
             "Connection": "close",
