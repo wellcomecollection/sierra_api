@@ -3,6 +3,7 @@ from .fields import (
     ITEMS_FIELDS,
     BIBS_FIELDS,
     HOLDINGS_FIELDS,
+    HOLD_FIELDS,
     ORDERS_FIELDS,
     PATRON_FIELDS,
 )

@@ -122,3 +122,13 @@ PATRON_FIELDS = ",".join(
         "varFields",
     ]
 )
+
+HOLD_FIELDS = [
+    "id",
+    "record",
+    "pickupLocation",
+    "notNeededAfterDate",
+    "note",
+    "status",
+    "placed",
+]
